@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PizzaPop</title>
+  </head>
+  <body>
+    <h1>Welcome to PizzaPop!</h1>
+    <ul>
+      {% for pizza in pizzas %}
+      <li>
+        <h2>{{ pizza.name }}</h2>
+        <p>{{ pizza.description }}</p>
+        <p>Price: ${{ pizza.price }}</p>
+        {% if pizza.image %}
+        <img src="{{ pizza.image.url }}" alt="{{ pizza.name }}" width="200" />
+        {% else %}
+        <img
+          src="{% static 'images/default-pizza.jpg' %}"
+          alt="Default Pizza"
+          width="200"
+        />
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
