@@ -37,7 +37,12 @@ SECRET_KEY = 'django-insecure-x9nfj5_lp+)a8w6suivbogr(8mp+o(f@5mm5l0!&re%xdy=&n(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = [
+    'pizzapop.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 # Application definition
